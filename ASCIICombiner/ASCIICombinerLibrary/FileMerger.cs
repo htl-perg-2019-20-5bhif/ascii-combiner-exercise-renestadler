@@ -12,23 +12,23 @@ namespace ASCIICombiner
             {
                 ar[i] = new char[args.First()[0].Length];
             }
-            for (int i = 0; i < args.First().Length; i++)
+            for (int i = 0; i < args.Count(); i++)
             {
-                if (args.First().Length != ar.Length)
+                if (args[i].Length != ar.Length)
                 {
                     return null;
                 }
-                for (int j = 0; j < args.First()[0].Length; j++)
+                for (int j = 0; j < args.First().Length; j++)
                 {
-                    if (args.First()[0].Length != ar.Length)
+                    if (args[i][j].Length != ar[0].Length)
                     {
                         return null;
                     }
-                    for (int k = 0; k < args.Count(); k++)
+                    for (int k = 0; k < args.First()[0].Length; k++)
                     {
-                        if (args[k][i][j] != ' ')
+                        if (args[i][j][k] != ' ')
                         {
-                            ar[i][j] = args[k][i][j];
+                            ar[j][k] = args[i][j][k];
                         }
                     }
                 }
